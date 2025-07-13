@@ -8,8 +8,104 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .App {
+  text-align: left;
+  background: var(--background-primary);
+  min-height: 100vh;
+  padding: 0 2rem;
+  }
+
+.section-heading {
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.card-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: var(--background-primary);
+  border-radius: 1rem;
+  padding: 2rem;
+  min-width: 220px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 768px) {
+  .card-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #18161c;
+}
+
+.left-column {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 2rem;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 3rem 2rem 2rem 2rem;
+  background: #18161c;
+  min-width: 350px;
+  max-width: 450px;
+}
+
+.right-column section {
+  margin-bottom: 2.5rem;
+}
+
+.right-column h2 {
+  font-family: 'Fira Mono', monospace;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+  }
+  .right-column {
+    max-width: 100%;
+    min-width: 0;
+    padding: 2rem 1rem;
+  }
+  .left-column {
+    padding: 2rem 1rem;
   }
 }
 
@@ -35,4 +131,5 @@
   to {
     transform: rotate(360deg);
   }
+}
 }

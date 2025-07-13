@@ -56,16 +56,17 @@
 
 .subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-xl);
   line-height: 1.6;
 }
 
 .buttons {
   display: flex;
-  gap: var(--spacing-md);
+  flex-direction: row;      /* Side by side */
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 2rem;                /* Space between buttons */
 }
 
 .primaryBtn, .secondaryBtn {
@@ -75,28 +76,60 @@
   font-size: 1rem;
   transition: var(--transition-normal);
   cursor: pointer;
+  color: var(--text-secondary);
 }
 
 .primaryBtn {
   background: var(--primary-color);
-  color: white;
+  color: var(--text-secondary);
 }
 
 .primaryBtn:hover {
   background: var(--secondary-color);
   transform: translateY(-2px);
+  color: var(--text-primary);
 }
 
 .secondaryBtn {
-  background: transparent;
-  color: var(--primary-color);
+  background: var(--primary-color);
+  color: var(spotify-color);
   border: 2px solid var(--primary-color);
+  position: relative;
+  z-index: 2;
 }
 
 .secondaryBtn:hover {
-  background: var(--primary-color);
-  color: white;
+  background: var(--spotify-color);
+  color: var(spotify-hover);
   transform: translateY(-2px);
+}
+
+.musicPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.closeBtn:hover {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
